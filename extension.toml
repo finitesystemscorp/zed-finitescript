@@ -4,8 +4,8 @@ version = "0.0.1"
 schema_version = 1
 authors = ["Finite Systems"]
 description = "FiniteScript language support for Zed."
-repository = "https://github.com/finitesystemscorp/finite"
+repository = "https://github.com/finitesystemscorp/zed-finitescript"
 
 [grammars.finitescript]
-repository = "file:///Users/josh/Projects/datum2/tools/zed-finitescript"
-rev = "f1e39cb1a06635d06a5ab93305440de52739da4d"
+repository = "https://github.com/finitesystemscorp/zed-finitescript"
+rev = "main"
