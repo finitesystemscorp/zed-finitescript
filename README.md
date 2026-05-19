@@ -16,10 +16,12 @@ entry points at the local Git repo for this checkout:
 
 ```toml
 repository = "file:///Users/josh/Projects/datum2/tools/zed-finitescript"
-rev = "HEAD"
+rev = "f1e39cb1a06635d06a5ab93305440de52739da4d"
 ```
 
-If the repository moves, update that path in `extension.toml`.
+If the repository moves, update that path in `extension.toml`. If you change
+the grammar, commit the nested `tools/zed-finitescript` repo and update `rev` to
+the new commit SHA.
 
 ## Development
 

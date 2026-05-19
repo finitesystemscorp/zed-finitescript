@@ -8,4 +8,4 @@ repository = "https://github.com/finitesystemscorp/finite"
 
 [grammars.finitescript]
 repository = "file:///Users/josh/Projects/datum2/tools/zed-finitescript"
-rev = "HEAD"
+rev = "f1e39cb1a06635d06a5ab93305440de52739da4d"
