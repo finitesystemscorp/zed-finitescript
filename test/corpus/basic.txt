@@ -1,0 +1,219 @@
+==================
+Headers and features
+==================
+
+finite "0";
+partStudio "ps_example";
+seed 82749;
+apiVersion "finite-builtins@2026-01-30";
+
+sketch sketch1 "Sketch 1" =
+  @newSketch("sketch1", { sketchPlane: Top }) {
+    @skLineSegment(this, "line1", {start: vec2(0*cm, 0*cm), end: vec2(1e-2*m, 0*cm)});
+    @skSolve(this);
+  };
+
+feature extrude1 "Extrude 1" =
+  extrude("extrude1", {
+    entities: qCreatedBy("sketch1", EntityType.FACE),
+    endDepth: 2*cm,
+    mode: NewBodyOperationType.NEW
+  });
+
+---
+
+(source_file
+  (header
+    version: (string)
+    (metadata_statement
+      (string))
+    (metadata_statement
+      (number))
+    (metadata_statement
+      (string)))
+  (feature_statement
+    name: (identifier)
+    display_name: (string)
+    call: (builtin_call
+      function: (builtin_name
+        (identifier))
+      (argument_list
+        (string)
+        (object
+          (object_field
+            key: (property_identifier
+              (identifier))
+            value: (identifier)))))
+    (block
+      (call_statement
+        (builtin_call
+          function: (builtin_name
+            (identifier))
+          (argument_list
+            (this)
+            (string)
+            (object
+              (object_field
+                key: (property_identifier
+                  (identifier))
+                value: (call_expression
+                  function: (identifier)
+                  (argument_list
+                    (binary_expression
+                      left: (number)
+                      right: (identifier))
+                    (binary_expression
+                      left: (number)
+                      right: (identifier)))))
+              (object_field
+                key: (property_identifier
+                  (identifier))
+                value: (call_expression
+                  function: (identifier)
+                  (argument_list
+                    (binary_expression
+                      left: (number)
+                      right: (identifier))
+                    (binary_expression
+                      left: (number)
+                      right: (identifier)))))))))
+      (call_statement
+        (builtin_call
+          function: (builtin_name
+            (identifier))
+          (argument_list
+            (this))))))
+  (feature_statement
+    name: (identifier)
+    display_name: (string)
+    call: (call_expression
+      function: (identifier)
+      (argument_list
+        (string)
+        (object
+          (object_field
+            key: (property_identifier
+              (identifier))
+            value: (call_expression
+              function: (identifier)
+              (argument_list
+                (string)
+                (member_expression
+                  object: (identifier)
+                  property: (identifier)))))
+          (object_field
+            key: (property_identifier
+              (identifier))
+            value: (binary_expression
+              left: (number)
+              right: (identifier)))
+          (object_field
+            key: (property_identifier
+              (identifier))
+            value: (member_expression
+              object: (identifier)
+              property: (identifier))))))))
+
+==================
+Definitions and flow
+==================
+
+import stdlib;
+
+export enum Side { LEFT, RIGHT };
+type FaceSelector typecheck isFaceSelector;
+
+defineFeature rib "Rib" (ctx, ...rest) {
+  annotation {
+    label: "Rib",
+    target: "feature"
+  }
+  let ok = true && !false;
+  if (ok) {
+    return ctx;
+  } else {
+    throw "bad";
+  }
+};
+
+function choose(values) {
+  for item in values {
+    assert item != null, "item required";
+  }
+}
+
+predicate positive(x) {
+  return x > 0;
+}
+
+---
+
+(source_file
+  (import_statement
+    module: (identifier))
+  (export_statement
+    (enum_statement
+      name: (identifier)
+      (enum_variant
+        (identifier))
+      (enum_variant
+        (identifier))))
+  (type_statement
+    name: (identifier)
+    predicate: (identifier))
+  (define_feature_statement
+    name: (identifier)
+    display_name: (string)
+    (parameter_list
+      (parameter
+        (identifier))
+      (rest_parameter
+        name: (identifier)))
+    (annotation_block
+      (annotation_field
+        key: (property_identifier
+          (identifier))
+        value: (string))
+      (annotation_field
+        key: (property_identifier
+          (identifier))
+        value: (string)))
+    (let_statement
+      name: (identifier)
+      value: (binary_expression
+        left: (boolean)
+        right: (unary_expression
+          argument: (boolean))))
+    (if_statement
+      condition: (identifier)
+      consequence: (block
+        (return_statement
+          (identifier)))
+      alternative: (block
+        (throw_statement
+          (string)))))
+  (function_statement
+    name: (identifier)
+    (parameter_list
+      (parameter
+        (identifier)))
+    (block
+      (for_statement
+        name: (identifier)
+        iterable: (identifier)
+        (block
+          (assert_statement
+            condition: (binary_expression
+              left: (identifier)
+              right: (null))
+            message: (string))))))
+  (predicate_statement
+    name: (identifier)
+    (parameter_list
+      (parameter
+        (identifier)))
+    (block
+      (return_statement
+        (binary_expression
+          left: (identifier)
+          right: (number))))))

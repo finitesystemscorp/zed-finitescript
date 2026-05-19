@@ -1,0 +1,11 @@
+id = "finitescript"
+name = "FiniteScript"
+version = "0.0.1"
+schema_version = 1
+authors = ["Finite Systems"]
+description = "FiniteScript language support for Zed."
+repository = "https://github.com/finitesystemscorp/finite"
+
+[grammars.finitescript]
+repository = "file:///Users/josh/Projects/datum2/tools/zed-finitescript"
+rev = "HEAD"

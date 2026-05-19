@@ -1,0 +1,30 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "finitescript",
+      "camelcase": "FiniteScript",
+      "title": "FiniteScript",
+      "scope": "source.finitescript",
+      "file-types": [
+        "fin"
+      ],
+      "highlights": "languages/finitescript/highlights.scm",
+      "class-name": "TreeSitterFiniteScript",
+      "injection-regex": "^finitescript$"
+    }
+  ],
+  "metadata": {
+    "version": "0.0.1",
+    "license": "UNLICENSED",
+    "description": "FiniteScript grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Finite Systems"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/finitesystemscorp/finite"
+    }
+  }
+}

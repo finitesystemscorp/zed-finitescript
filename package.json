@@ -1,0 +1,20 @@
+{
+  "name": "tree-sitter-finitescript",
+  "version": "0.0.1",
+  "description": "Tree-sitter grammar for FiniteScript.",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "commonjs",
+  "files": [
+    "grammar.js",
+    "src"
+  ],
+  "tree-sitter": [
+    {
+      "scope": "source.finitescript",
+      "file-types": [
+        "fin"
+      ]
+    }
+  ]
+}
