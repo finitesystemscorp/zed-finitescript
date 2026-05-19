@@ -43,7 +43,9 @@
 (null) @constant.builtin
 (this) @variable.special
 
-(builtin_name) @function.builtin
+(builtin_call
+  "@" @operator.special
+  function: (builtin_name) @function.builtin)
 (call_expression
   function: (identifier) @function)
 
